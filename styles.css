@@ -6,12 +6,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    color: #3B2F2F; /* deep warm brown */
-    background-color: #F7F2E8; /* soft warm neutral */
+    color: #3B2F2F;
+    background-color: #F7F2E8;
 }
 
 /* ------------------------------
-   HEADER
+   HEADER (logo removed)
 ------------------------------ */
 
 header {
@@ -19,51 +19,152 @@ header {
     padding: 25px 0;
 }
 
-header img {
-    border-radius: 8px;
-}
-
 h1 {
     font-size: 42px;
-    color: #8B3A3A; /* warm earthy red */
+    color: #8B3A3A;
     margin-top: 10px;
 }
 
 /* ------------------------------
-   NAVIGATION BAR
+   RESPONSIVE NAVIGATION BAR
 ------------------------------ */
 
-nav {
-    background-color: #5A6F4E; /* muted forest green */
+.navbar {
+    background-color: #5A6F4E;
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    padding: 12px 0;
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    padding: 10px 0;
 }
 
-nav ul {
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centers the menu */
+}
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    font-size: 32px;
+    color: #F7E7CE;
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+}
+
+/* Desktop Menu */
+.nav-menu {
     list-style: none;
+    display: flex;
+    gap: 55px; /* more space between items */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
 }
 
-nav ul li a {
-    color: #F7E7CE; /* warm cream */
+.nav-menu li a {
+    color: #F7E7CE;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px; /* slightly larger */
     font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 6px;
+    padding: 14px 20px; /* more padding around text */
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-nav ul li a:hover {
-    background-color: #A67B5B; /* warm brown */
-    transform: scale(1.05);
+.nav-menu li a:hover {
+    background-color: #A67B5B;
+    transform: scale(1.08);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #4A3F35;
+    list-style: none;
+    padding: 12px 0;
+    border-radius: 8px;
+    min-width: 200px; /* wider dropdown */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 18px;
+    font-size: 18px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ------------------------------
+   RESPONSIVE (MOBILE)
+------------------------------ */
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #5A6F4E;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        padding: 25px 0;
+        gap: 20px;
+    }
+
+    #menu-toggle:checked + .hamburger + .nav-menu {
+        display: flex;
+    }
+
+    .nav-menu li {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background-color: #4A3F35;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .dropdown-menu li a {
+        padding: 14px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown:active .dropdown-menu {
+        display: block;
+    }
 }
 
 /* ------------------------------
@@ -75,7 +176,7 @@ nav ul li a:hover {
     margin: 30px auto;
     font-size: 18px;
     line-height: 1.7;
-    color: #4B3F35; /* earthy brown */
+    color: #4B3F35;
 }
 
 /* ------------------------------
@@ -83,7 +184,7 @@ nav ul li a:hover {
 ------------------------------ */
 
 .bio-section {
-    background: rgba(255, 248, 231, 0.95); /* warm cream */
+    background: rgba(255, 248, 231, 0.95);
     padding: 25px;
     margin: 40px auto;
     width: 80%;
@@ -92,7 +193,7 @@ nav ul li a:hover {
 }
 
 .bio-section h2 {
-    color: #6B8E8A; /* dusty blue-green */
+    color: #6B8E8A;
     font-size: 28px;
     margin-bottom: 10px;
 }
@@ -118,18 +219,18 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 25px;
-    background: #4A3F35; /* deep earthy brown */
-    color: #F7E7CE; /* warm cream */
+    background: #4A3F35;
+    color: #F7E7CE;
     margin-top: 50px;
 }
 
 footer a {
-    color: #D9A441; /* warm golden yellow */
+    color: #D9A441;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #F4C16D; /* lighter golden yellow */
+    color: #F4C16D;
 }
