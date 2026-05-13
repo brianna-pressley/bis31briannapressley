@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Loops Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Week 6: PHP Loops Assignment</h1>
+</header>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Assignments ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="loops.html">PHP Loops</a></li>
+                </ul>
+            </li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="bio-section">
+    <h2>PHP Loops Code</h2>
+    <p>Below is the PHP code required for Week 6. This page displays the code only, as GitHub Pages does not run PHP.</p>
+
+    <pre><code>
+1) For loop: print numbers 1 to 18
+
+<?php
+for ($i = 1; $i <= 18; $i++) {
+    echo $i . " ";
+}
+?>
+
+2) While loop: print numbers 1 to 27
+
+<?php
+$j = 1;
+while ($j <= 27) {
+    echo $j . " ";
+    $j++;
+}
+?>
+
+3) Do-while loop: print numbers 1 to 15
+
+<?php
+$k = 1;
+do {
+    echo $k . " ";
+    $k++;
+} while ($k <= 15);
+?>
+
+4) Sum of all odd numbers from 2 to 21
+
+<?php
+$sum = 0;
+for ($n = 2; $n <= 21; $n++) {
+    if ($n % 2 != 0) {
+        $sum += $n;
+    }
+}
+echo "Sum: " . $sum;
+?>
+
+5) Product of all even numbers from 3 to 17
+
+<?php
+$product = 1;
+for ($m = 3; $m <= 17; $m++) {
+    if ($m % 2 == 0) {
+        $product *= $m;
+    }
+}
+echo "Product: " . $product;
+?>
+    </code></pre>
+</div>
+
+<footer>
+    <p>©2026 Brianna Pressley</p>
+</footer>
+
+</body>
+</html>
